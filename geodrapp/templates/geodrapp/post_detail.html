@@ -1,0 +1,215 @@
+{% extends "geodrapp/base.html" %}
+{% block content %}
+
+<div class="row">
+	<div class=" col-md-8 mt-3 mr-2">
+		<h5> Full article </h5>
+		<hr>
+        <br>
+        <article class="media content-section mt-2">
+            <div class="media-body">
+                <lu class="list-group mr-5">
+                    <li class="list-group-item list-group-item-light">
+                        <div class="article-metadata">
+
+
+                                    <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
+
+                                    <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
+                                    <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
+
+
+                            <!--
+                            <div class="row">
+                                <div class="col col-md-1">
+                                    <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
+                                </div>
+                                <div class="col col-md-11 mt-2">
+                                    <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
+                                    <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light" style="text-align: justify; padding: 30px;">
+                        <br>
+                        <h5 class="article-title text-dark" style="width: 100%"> {{ object.title }}  </h5>
+                        <hr>
+                        <p class="article-content text-dark" style="text-align: justify;">
+
+                            {% if post.image_1 %}
+                            <img src="{{ object.image_1.url }}" alt="image1" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_1|safe }}
+
+                            {% if post.image_2 %}
+                            <img src="{{ object.image_2.url }}" alt="image2" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_2|safe }}
+
+                            {% if post.image_3 %}
+                            <img src="{{ object.image_3.url }}" alt="image3" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_3|safe }}
+
+                            {% if post.image_4 %}
+                            <img src="{{ object.image_4.url }}" alt="image4" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_4|safe }}
+
+                            {% if post.image_5 %}
+                            <img src="{{ object.image_5.url }}" alt="image5" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_5|safe }}
+
+                            {% if post.image_6 %}
+                            <img src="{{ object.image_6.url }}" alt="image6" style="width:100%;">
+                            {% endif %}
+
+                            {{ object.content_6|safe }}
+
+                            {% if post.image_7 %}
+                            <img src="{{ object.image_7.url }}" alt="image7" style="width:100%;">
+                            {% endif %}
+                        </p>
+                    </li>
+
+
+                    <li class="list-group-item list-group-item-light" style="padding: 30px;">
+                        <form action="{% url 'like_post' post.pk %}" method="POST">
+                            {% csrf_token %}
+
+                                {% if user.is_authenticated %}
+
+                                    {% if liked %}
+                                    <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+
+                                    {% else %}
+
+                                    <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+
+                                    {% endif %}
+
+                                {% else %}
+                                    <small> <a href="{% url 'login' %}"> Login </a> to like this post </small>
+                                {% endif %}
+
+                                <small class="text-muted"> ({{ total_likes }} <i class="fas fa-thumbs-up"></i>) </small>
+
+
+
+                            <!-- Commenting links -->
+                            &nbsp &nbsp
+
+                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> Add Comment </a>
+
+                        </form>
+
+
+
+                        <!-- This is the Author of the Article -->
+                        <br><br>
+                        <div class="row article-metadata border-top">
+                            <div class="col col-md-3">
+                                <img class="article-img mt-2" style="width: 100%;" src="{{ post.author.profile.image.url }}" alt="">
+                            </div>
+
+                            <div class="col col-md-9" style="padding-top: 20px; text-align: left;">
+                                <strong> {{ post.author.first_name }} {{ post.author.last_name }}</strong>
+                                <small> is the author of this helpful and awesome article published on {{ post.date_posted | date:"F d, Y"}}, with a full copyright issued by Geospatial Development and Research Hub. </small>
+                                <hr>
+                                <small> Explore more articles by <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> {{ object.author.first_name }} {{ object.author.last_name }} </a> </small>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- Comments Section -->
+                        <br><br><br>
+                        <div style="padding: 20px; background:#EEEEEE;">
+
+                            {% if not post.comments.all %}
+
+                            <h5 style="font-weight: bold; color: black"> No comment on this article </h5>
+                            <hr>
+                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> Be the first one to comment on this post </a>
+
+                            {% else %}
+                            <h5 style="font-weight: bold; color: black"> Read the comments on this article </h5>
+                                {% for comment in post.comments.all %}
+                                    <hr>
+                                    <div class="mb-3">
+                                        <strong>
+                                            {{ comment.name }}
+                                        </strong>
+                                        <small>
+                                          &nbsp &nbsp | {{ comment.date_added | date:"F d, Y" }}
+                                        </small>
+                                    </div>
+
+
+                                    <div>
+                                        {{ comment.body }}
+                                    </div>
+
+                            <br>
+                                {% endfor %}
+
+                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> Add Comment </a>
+
+                            {% endif %}
+
+
+                        </div>
+
+                    </li>
+
+                </lu>
+
+
+                <br>
+
+                <hr>
+                <div class="col col-md-3">
+                    {% if object.author == user %}
+                    <a class="btn btn-secondary btn-sm ml-4 mt-1 mb-1" href="{% url 'geodrapp-post_update' object.id %}"> Edit Post </a>
+                    <a class="btn btn-danger btn-sm ml-4 mt-1 mb-1" href="{% url 'geodrapp-post_delete' object.id %}"> Delete </a>
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+        </article>
+        <br>
+        <div>
+            <a href="{% url 'geodrapp-blog' %}"> &#8592 Latest stories </a>
+        </div>
+	</div>
+
+
+
+
+<div class="col-md-1"> </div>
+	<!-- Sidebar -->
+    <div class=" col-md-3 mt-3">
+        <div class="border bg-light" style="padding: 10px;">
+            This is the Sidebar on Blog page
+            <br><br><br><br>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

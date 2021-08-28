@@ -1,0 +1,42 @@
+{% extends "geodrapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="row content-section bg-light">
+
+        <!-- First column -->
+        <div class="col col-md-3"></div>
+
+        <!-- Second column -->
+        <div class="col col-md-6">
+            <div class=" row media ml-2 mt-2 mb-2 mr-2">
+                <div class="col col-md-2">
+                <img class="rounded-circle account-img" width="80" height="80" src="{{ user.profile.image.url }}">
+                </div>
+                <div class="col col-md-8 media-body ml-2">
+                    <h2 class="account-heading"> {{ user.username }} </h2>
+                    <p class="text-secondary"> {{ user.email }} </p>
+                </div>
+            </div>
+
+            <!-- FORM HERE -->
+            <form method="POST" enctype="multipart/form-data" class="ml-4 mr-4 mb-4 mt-4">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4 "> Profile Info </legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit"> Update </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Third column -->
+        <div class="col col-md-3"></div>
+
+    </div>
+
+{% endblock content %}

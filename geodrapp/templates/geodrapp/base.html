@@ -1,0 +1,698 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/1819ae9131.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- main.css style sheet -->
+
+    <link rel="stylesheet" type="text/css" href="/static/geodrapp/main.css">
+
+    <link href="/static/geodrapp/main.js">
+
+    <style>
+
+        .hamburger-container {
+              display: inline-block;
+              cursor: pointer;
+              position:absolute;
+            }
+
+            .bar1, .bar2, .bar3 {
+              width: 35px;
+              height: 5px;
+              background-color: #fff;
+              margin: 6px 0;
+              transition: 0.4s;
+              position: relative;
+              top: 3px;
+
+              display: none;
+            }
+
+            .change .bar1 {
+              -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+              transform: rotate(-45deg) translate(-9px, 6px);
+            }
+
+            .change .bar2 {opacity: 0;}
+
+            .change .bar3 {
+              -webkit-transform: rotate(45deg) translate(-8px, -8px);
+              transform: rotate(45deg) translate(-8px, -8px);
+            }
+            .hamburger-container .bar{
+                height: 2px;
+                width: 21px;
+                position: relative;
+                background-color: black;
+                z-index: -1;
+             }
+
+            .hamburger-container .bar::after,
+            .hamburger-container .bar::before{
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                transition: .3s ease;
+                transition-property: top bottom;
+             }
+
+
+             .hamburger-container .bar::after{
+                    top: 7px;
+                }
+              .hamburger-container .bar::before{
+                    bottom:7px
+                }
+
+              .hamburger-container.active .bar::after{
+                    top: 0;
+                }
+              .hamburger-container.active .bar::before{
+                    bottom:0
+             }
+
+
+
+
+
+
+
+
+           @media (max-width: 1270px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:550px;
+                }
+
+           }
+
+
+
+
+            @media (max-width: 1180px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:500px;
+                }
+
+           }
+
+
+
+
+            @media (max-width: 1100px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:470px;
+                }
+
+           }
+
+
+
+           @media (max-width: 1000px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:400px;
+                }
+
+           }
+
+
+
+
+            @media (max-width: 900px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:350px;
+                }
+
+           }
+
+
+           @media (max-width: 800px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:330px;
+                }
+
+           }
+
+
+
+           @media (max-width: 700px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:260px;
+                }
+
+           }
+
+
+
+           @media (max-width: 600px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:240px;
+                }
+
+           }
+
+           @media (max-width: 540px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:220px;
+                }
+
+           }
+
+           @media (max-width: 500px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:170px;
+                }
+
+           }
+
+
+           @media (max-width: 400px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:150px;
+                }
+
+           }
+
+           @media (max-width: 320px){
+
+                 .main_nav_bar{
+                        display: none;
+                 }
+
+                 .navbar-nav{
+                        display: none;
+                 }
+                .hamburger-container{
+                      display:none;
+                    }
+                .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:130px;
+                }
+
+           }
+
+
+
+
+
+
+
+
+.navbar-container{
+width: 90%;
+max-width: 1300px;
+height: 50px;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.main_nav_bar{
+margin-top: 30px;
+}
+
+
+.navbar-nav{
+margin-top: 20px;
+}
+
+
+.about-section h3{
+font-size: 30px;
+width: 100%;
+padding: 20px;
+padding-bottom: 0px;
+}
+
+.about-section p{
+font-size: 20px;
+width:100%;
+height: 110px;
+padding: 20px;
+text-align: justify;
+}
+
+
+    </style>
+
+
+
+
+	{% if title %}
+		<title> GeoDR Hub - {{ title }} </title>
+	{% else %}
+		<title> GeoDR Hub </title>
+	{% endif %}
+</head>
+
+
+
+
+
+
+
+
+	<!-- Favicon  -->
+    <link rel="icon" href="/static/geodrapp/geodrhub_logo.png">
+
+
+
+
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+<header class="site-header" id="scroll-nav">
+    <nav class="navbar">
+
+        <!--navbar-container-->
+        <div class="navbar-container">
+
+                 <!-- Image Logo -->
+                 <div class="brand_logo" >
+                    <a class="logo-image" href="{% url 'geodrapp-home' %}"><img src="/static/geodrapp/geodrhub_logo.png" alt="Company logo is not available"></a>
+                 </div>
+
+                <!--  Humberg-->
+                <div class="hamburger-container"  onclick="myFunction(this)">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+                </div>
+
+                 <!--Main nav bar-->
+                 <div class="main_nav_bar">
+                     <ul class="main_nav_items">
+                         <li>
+                             <a href="{% url 'geodrapp-home' %}">HOME</a>
+                         </li>
+                         <li>
+                             <a href="{% url 'geodrapp-about' %}">ABOUT</a>
+                         </li>
+                         <li>
+                             <a href="{% url 'geodrapp-blog' %}">BLOG</a>
+                         </li>
+                         <li>
+                             <a href="{% url 'geodrapp-service' %}">SERVICES</a>
+                         </li>
+                         <li>
+                             <a href="{% url 'geodrapp-project' %}">PROJECTS</a>
+                         </li>
+                         <li>
+                             <a href="#">DATA</a>
+                         </li>
+                         <li>
+                             <a href="{% url 'geodrapp-storymap' %}">STORY MAP</a>
+                         </li>
+                         <li>
+                             <a href="#">CONTACT</a>
+                         </li>
+                     </ul>
+
+                 </div>
+
+
+                <!-- Navbar Right Side -->
+                <div Class="navbar-nav">
+
+                    <ul class="right-nav">
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'profile' %}"><img class="profile"  src="{{ user.profile.image.url }}" alt=""></a>
+                        </li>
+                        <li class="userName">
+                            <a class="nav-item nav-link" href="{% url 'profile' %}">
+                                {{ user.username }}!!
+                            </a>
+                        </li>
+                        <li class="userName">
+                            <a class="nav-item nav-link" href="{% url 'geodrapp-post_form' %}"> Create Post </a>
+                        </li>
+                        <li class="userName">
+                            <a class="nav-item nav-link" href="{% url 'logout' %}"> Logout </a>
+                        </li>
+
+                        {% else %}
+
+                        <li>
+                            <a class="nav-item nav-link" href="{% url 'login' %}"> Login </a>
+                            </li>
+                        <li>
+                            <a class="nav-item nav-link" href="{% url 'register' %}"> Register </a>
+                        </li>
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+        </div>
+ <!--End of navbar-container-->
+    </nav>
+<!-- end of navbar -->
+</header>
+
+
+
+
+    <hr>
+    <br><br>
+
+    <div class="container">
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alter-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+
+
+       <!-- Footer -Top- -->
+    <footer class="footer mt-5 container-fluid" content="width=device-width, initial-scale=1" style="background:#808B96;">
+        <div class="row">
+            <div class="col-md-3 my-col">
+              <div class="col-md-12 my-col text-black text-center mt-2" style="width:100%">  <h5 class="text-black">Navigation</h5>
+                <div class="col-md-12 mt-2" style="width:100%">
+                  <p class="text-center"><a class="text-white" href="#">Home</a></p>
+                  <p class="text-center"><a class="text-white" href="#">About</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Blog</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Services</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Projects</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Events</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Announcements</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Calendar</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Register</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 my-col text-dark">
+              <div class="col-md-12 my-col text-dark mb-2 mt-2 text-center"> <h5>GeoDR Hub</h5>
+                <div class="col-md-12 mt-2 text-center">
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 my-col text-dark">
+              <div class="col-md-12 my-col text-dark mb-2 mt-2 text-center" style="width:100%"> <h5>Services</h5>
+                <div class="col-md-12 mt-2 text-center" style="width:100%">
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                  <p class="text-center"><a class="text-white" href="#">Any service</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 my-col text-dark">
+              <div class="col-md-12 my-col text-dark mt-2 text-center" style="width:100%"> <h5>Contact Us</h5>
+                <div class="mt-2 text-center" style="width:100%">
+                  <p class="text-center"> Website: </p>
+                  <a class="text-white text-center" style="width:100%" href="#">www.geodrhub.com</a>
+                </div>
+                <div class="mt-2 text-center" style="width:100%">
+                  <p class="text-center"> Email:</p>
+                  <a class="text-white" href="#">info@geodrhub.com</a>
+                </div>
+                <div class="mt-2 text-center" style="width:100%">
+                  <p class="text-center"> Tel: </p>
+                  <small class="text-white"> (+250) 788 850 294  </small>
+                </div>
+
+                <div class="mt2 text-center" style="width:100%">
+                  <p class="text-center"> Street: </p>
+                  <small class="text-white"> KN 73 Street, Kiyovu  </small>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+
+            <div class="col col-md-3 mt-4" style="text-align: center;">
+                <small class="text-center" style="color:#ffffff"> GeoDR Hub - Putting real life on a map </small>
+            </div>
+
+            <div class="col col-md-6 mt-2" style="text-align: center;">
+                <img src="/static/geodrapp/geodrhub_logo.png" height="70">
+            </div>
+
+            <div class="col col-md-3 mt-4" style="text-align: center;">
+                <a href="#"><small class="text-white"> Terms </small></a>
+                <a href="#"><small class="text-white"> | Privacy </small></a>
+                <a href="#"><small class="text-white"> | Copyright </small></a>
+            </div>
+        </div>
+        <hr>
+    </footer>
+
+
+
+
+    <!-- Footer -bottom- -->
+    <footer class="footer footer-expand-md footer-dark bg-steel"  style="background:#808B96;">
+        <hr>
+        <div class="row">
+            <div class="col-md-4 ml-2" style="text-align: center;">
+                <small class="col-12 text-light "> Follow Us : </small> &nbsp &nbsp
+                <a href="#"><i class="fab fa-facebook btn btn-outline-light rounded-circle mt-2"></i></a>
+                <a href="#"><i class="fab fa-instagram btn btn-outline-light rounded-circle mt-2"></i></a>
+                <a href="#"><i class="fab fa-twitter btn btn-outline-light rounded-circle mt-2"></i></a>
+                <a href="#"><i class="fab fa-youtube btn btn-outline-light rounded-circle mt-2"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in btn btn-outline-light rounded-circle mt-2"></i></a>
+            </div>
+
+            <div class="col-md-4 mt-1" style="text-align: center;">
+                <small class="text-center" style="color:#ffffff;"> Copyright ©2021 GeoDR Hub : All rights reserved </small>
+            </div>
+            <div class="col-md-3 mt-2 mr-2" style="text-align: center;">
+                <small style="color:#ffffff"> GeoDR Hub Developers Team </small>
+            </div>
+        </div>
+        <br>
+    </footer>
+	
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+    </script>
+
+
+
+
+
+    <script>
+const header = document.querySelector('header');
+const sectionOne = document.querySelector('#home-intro');
+const siteHeader = document.querySelector('.site-header')
+
+const sectionOneOptions = {};
+
+const sectionOneObserver = new IntersectionObserver
+(function(
+entries,
+sectionOneObserver
+) {
+entries.forEach(entry => {
+ if (!entry.isIntersecting) {
+ header.classList.add('siteHeader');
+ } else {
+ header.classList.remove('siteHeader')
+ }
+});
+}
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
+
+
+
+
+    </script>
+
+</body>
+</html>

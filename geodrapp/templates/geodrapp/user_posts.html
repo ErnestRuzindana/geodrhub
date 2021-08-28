@@ -1,0 +1,86 @@
+{% extends "geodrapp/base.html" %}
+{% block content %}
+
+	<div class="row">
+		<div class=" col-md-8 mt-3 mr-2">
+			<h6 class="mb-3"> Articles by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h6>
+			<hr>
+			<br>
+			{% for post in posts %}
+				<article class="media content-section mt-2">
+					<div class="media-body">
+						<lu class="list-group mr-5">
+							<li class="list-group-item list-group-item-light">
+								<div class="article-metadata">
+									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
+									<a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' post.author.username %}"> &nbsp {{ post.author.first_name }} {{ post.author.last_name }}</a>
+									<small class="text-muted"> &nbsp &nbsp | {{ post.date_posted | date:"F d, Y"}} </small>
+								</div>
+							</li>
+							<li class="list-group-item list-group-item-light">
+								<div class="col-md-11 ml-3" style="width:100%;">
+									<h4 class="article-title text-dark"> {{ post.title }} </h4>
+
+									<div class="row">
+										<div class="col-md-5 mt-2" style="text-align: center;">
+										{% if post.image_1 %}
+											<img src="{{ post.image_1.url }}" alt="image_1" style="width:100%;">
+										{% endif %}
+										</div>
+
+										<div class="col-md-6" style="text-align: justify;">
+										<p class="article-content text-dark text-justify"> {{ post.content_1|safe|slice:":400" }} ....
+											{% if content_1|length > 400 %}
+											...
+											{% endif %}
+										</p>
+										</div>
+									</div>
+								</div>
+								<div class="article-metadata border-top" style="text-align: right;">
+									<a class="text-right mt-2" href="{% url 'geodrapp-post_detail' post.id %}"> <small>Read more</small>  </a>
+								</div>
+							</li>
+						</lu>
+					</div>
+					<br>
+				</article>
+			{% endfor %}
+
+			{% if is_paginated %}
+
+				{% if page_obj.has_previous %}
+					<a class="btn btn-outline-info mb-4 mt-4" href="?page=1"> First </a>
+					<a class="btn btn-outline-info mb-4 mt-4" href="?page={{ page_obj.previous_page_number }}"> Previous </a>
+				{% endif %}
+
+				{% for num in page_obj.paginator.page_range %}
+					{% if page_obj.number == num %}
+						<a class="btn btn-primary mb-4 mt-4" href="?page={{ num }}"> {{ num }} </a>
+					{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+						<a class="btn btn-outline-primary mb-4 mt-4" href="?page={{ num }}"> {{ num }} </a>
+					{% endif %}
+				{% endfor %}
+
+				{% if page_obj.has_next %}
+					<a class="btn btn-outline-primary mb-4 mt-4" href="?page={{ page_obj.next_page_number }}"> Next </a>
+					<a class="btn btn-outline-primary mb-4 mt-4" href="?page={{ page_obj.paginator.num_pages }}"> Last </a>
+				{% endif %}
+
+			{% endif %}
+		</div>
+
+
+
+
+	<div class="col-md-1"> </div>
+		<!-- Sidebar -->
+		<div class=" col-md-3 mt-3 border">
+			This is the Sidebar on Blog page
+
+			<br><br><br><br>
+		</div>
+	</div>
+
+
+{% endblock content %}

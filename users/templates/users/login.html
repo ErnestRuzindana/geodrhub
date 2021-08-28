@@ -1,0 +1,41 @@
+{% extends "geodrapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="row content-section bg-light">
+
+	<!-- First column -->
+	<div class="col col-md-3"></div>
+
+	<!-- Second column -->
+	<div class="col col-md-6">
+		<div class="content-section" >
+			<form method="POST" class="ml-4 mr-4 mb-4 mt-4">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<legend class="border-bottom mb-4 "> Log In </legend>
+					{{ form|crispy }}
+				</fieldset>
+				<br>
+				<div class="form-group">
+					<button class="btn btn-outline-primary" type="submit"> login </button>
+					<small>
+						<a href="{% url 'password_reset' %}"> Forgot Password? </a>
+					</small>
+				</div>
+			</form>
+			<div class="border-top pt-3 ml-4 mr-4 mb-4 mt-4">
+				<small class="text-muted ">
+					Need an account? <a class="ml-2" href="{% url 'register' %}"> Sign Up Now </a>
+				</small>
+			</div>
+		</div>
+	</div>
+
+	<!-- Third column -->
+	<div class="col col-md-3"></div>
+
+</div>
+
+
+{% endblock content %}
