@@ -33,8 +33,8 @@
                         </div>
                     </li>
 
-                    <li class="list-group-item list-group-item-light" style="text-align: justify; padding: 30px;">
-                        <br>
+                    <li class="article-detail list-group-item list-group-item-light" style="text-align: justify; padding: 30px;">
+
                         <h5 class="article-title text-dark" style="width: 100%"> {{ object.title }}  </h5>
                         <hr>
                         <p class="article-content text-dark" style="text-align: justify;">
@@ -112,7 +112,7 @@
                             <!-- Commenting links -->
                             &nbsp &nbsp
 
-                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> Add Comment </a>
+                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> <small>Add Comment</small> </a>
 
                         </form>
 
@@ -156,19 +156,19 @@
                                             {{ comment.name }}
                                         </strong>
                                         <small>
-                                          &nbsp &nbsp | {{ comment.date_added | date:"F d, Y" }}
+                                          &nbsp &nbsp | <i> {{ comment.date_added | date:"F d, Y" }} </i>
                                         </small>
                                     </div>
 
 
-                                    <div>
+                                    <div class="comment-body">
                                         {{ comment.body }}
                                     </div>
 
                             <br>
                                 {% endfor %}
 
-                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> Add Comment </a>
+                            <a href="{% url 'geodrapp-add_comment' post.pk %}"> <i class="far fa-comment"></i> <small>Add Comment</small> </a>
 
                             {% endif %}
 
