@@ -49,8 +49,8 @@ link icon Hover:
 
 
 .logo-image img{
-width: 60px;
-height: 70px;
+width: 55px;
+height: 60px;
 padding-top: 15px;
 }
 
@@ -60,12 +60,6 @@ body {
     background-color: #EEEEEE;
 }
 
-
-.about-section p{
-font-size: 20px;
-width:80%;
-height: 40px;
-}
 
 
 /* --------- NAV BAR CUSTOMIZATION----------- */
