@@ -138,3 +138,6 @@ def service(request):
 
 def storymap(request):
     return render(request, 'geodrapp/storymap.html', {'title': 'storymap'})
+
+def logo(request):
+    return render(request, 'geodrapp/logo.html', {'title': 'logo'})

@@ -17,6 +17,7 @@ urlpatterns = [
     path('project/', views.project, name='geodrapp-project'),
     path('service/', views.service, name='geodrapp-service'),
     path('storymap/', views.storymap, name='geodrapp-storymap'),
+    path('logo/', views.logo, name='geodrapp-logo'),
 ]
 
 
