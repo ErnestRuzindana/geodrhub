@@ -141,3 +141,12 @@ def storymap(request):
 
 def logo(request):
     return render(request, 'geodrapp/logo.html', {'title': 'logo'})
+
+def event(request):
+    return render(request, 'geodrapp/event.html', {'title': 'event'})
+
+def announcement(request):
+    return render(request, 'geodrapp/announcement.html', {'title': 'announcement'})
+
+def calendar(request):
+    return render(request, 'geodrapp/calendar.html', {'title': 'calendar'})
