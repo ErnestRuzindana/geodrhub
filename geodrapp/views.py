@@ -150,3 +150,6 @@ def announcement(request):
 
 def calendar(request):
     return render(request, 'geodrapp/calendar.html', {'title': 'calendar'})
+
+def gis(request):
+    return render(request, 'geodrapp/gis.html', {'title': 'Training of GIS'})

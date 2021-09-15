@@ -21,6 +21,7 @@ urlpatterns = [
     path('event/', views.event, name='geodrapp-event'),
     path('announcement/', views.announcement, name='geodrapp-announcement'),
     path('calendar/', views.calendar, name='geodrapp-calendar'),
+    path('gis/', views.gis, name='geodrapp-gis'),
 ]
 
 
