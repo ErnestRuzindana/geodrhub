@@ -1,6 +1,38 @@
 const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
 const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-list ul li a')
+const menu_item = document.querySelectorAll('.header .nav-list ul li a');
+
+
+// Toogle
+
+const menuCenter = document.querySelector('#mainMenuCenter');
+const closebars = document.querySelector('.close');
+const opebBars = document.querySelector('#open')
+
+function humbergh() {
+    console.log('clicked')
+    opebBars.style.display = block;
+}
+
+opebBars.addEventListener('click', ()=>{
+    console.log('clicked')
+    // hamburger.classList.toggle('active');
+    // mobile_menu.classList.toggle('active')
+})
+
+opebBars.addEventListener('click', ()=>{
+    console.log('clicked')
+    // hamburger.classList.toggle('active');
+    // mobile_menu.classList.toggle('active')
+})
+
+
+
+
+
+
+
+
 
 
 

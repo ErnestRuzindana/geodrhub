@@ -27,6 +27,18 @@
 
 
     <style>
+        .navbar{
+            box-shadow: 0 2px 5px 0px;
+        }
+
+        .main_nav_bar ul{
+            margin-top: 10px;
+        }
+
+        .mainMenuCenter {
+            display: flex;
+            justify-content: center;
+        }
 
         .hamburger-container {
               display: inline-block;
@@ -34,7 +46,7 @@
               position:absolute;
             }
 
-            .bar1, .bar2, .bar3 {
+             .bar1, .bar2, .bar3 {
               width: 35px;
               height: 5px;
               background-color: #fff;
@@ -89,31 +101,200 @@
                 }
               .hamburger-container.active .bar::before{
                     bottom:0
+             } 
+
+
+             /* subMenu Drop down section */
+             
+/* /*               */
+            /* .mainMenuCenter {
+                display: flex;
+            }  */
+
+
+
+            .navbar-container{
+                position: relative;
+            }
+             
+             .main_nav_bar ul li ul {
+                 background: #808B96;
+                 box-shadow: 0 2px 5px 0px;
+                 top: 35px;
+                 border-radius: 4px;
+                 justify-content: center;
+                 flex-direction: column;
+                 cursor: pointer;
+                 transition: .4s;
+                
+             }
+
+             .main_nav_bar ul li ul li{
+                 border-bottom: 1px solid #fff;
+                 padding: 10px;
+             }
+ 
+             .main_nav_bar ul li ul li{
+                 display: none;
+                 justify-content: center;
+                 flex-direction: column;
+                 cursor: pointer;
+                 transition: .4s;
+                 line-height: 2rem;
+             }
+
+             .main_nav_bar ul li:hover ul li {
+                 display: block;
+                 position: relative;
+                 transition:  all .5s;
+             }
+             .Menuservice1  {
+                 position: relative;
+             }
+
+             #Menuservice1 {
+                 top: 10px;
+             }
+             
+             #Menuservice4 {
+                 background: #808B96;
+                 border-bottom: none;
+             }
+            
+
+             .hamburger-container {
+                 margin-top: 15px;
              }
 
 
+    /*------------Start----- sub-submenu section ----------------------*/
+
+    
+             
+             .main_nav_bar ul li ul{
+                 position: absolute;
+             }
+
+             .main_nav_bar ul li ul li ul {
+                 background: #4d63c5;
+                 box-shadow: 0 2px 5px 0px;
+                 justify-content: center;
+                 flex-direction: column;
+                 cursor: pointer;
+                 transition: all .4s;
+             }
+
+             .main_nav_bar ul li ul li ul li{
+                 border-bottom: 1px solid #fff;
+                 padding: 8px;
+             }
+ 
+             .main_nav_bar ul li ul li ul{
+                 display: none;
+                 position: absolute;
+                 justify-content: center;
+                 flex-direction: column;
+                 cursor: pointer;
+                 transition: .4s;
+                 line-height: 2rem;
+             }
+
+             .main_nav_bar ul li ul li:hover .subsubMenu{ 
+                 background: #808B96;
+                 display: block;
+                 left: 6rem;
+                 top: 0px;
+                 transition:  all .5s;
+             }
+
+             /* ---Close____ */
+
+             /* .close {
+                 top: 2px;
+                 left: 120px;
+                 font-size: 1rem;
+                 color: red;
+                 cursor: pointer;
+                 float: left;
+             } */
 
 
 
-
-
+    /*------------Start----- sub-submenu section ----------------------*/
+    
+    
+    /* <!------------Start-----Center Menu----main and Right Menu----------------- --> */
 
            @media (max-width: 1270px){
+            .navbar-container {  
+                display: flex;
+                flex-direction: column;
+            }
+                .navbar .mainMenuCenter{                     
+                    position: absolute;  
+                    width: 100%;                 
+                    height: 100vh;               
+                    background: rgb(107, 35, 35);
+                    display: none;
+                    left: -30%;
+                    /* display: flex; */
+                    flex-direction: column;
+                } 
 
-                 .main_nav_bar{
-                        display: none;
+                .main_nav_bar ul{
+                    background: black;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .main_nav_bar ul li{
+                    padding: 8px;
+                    align-items: center;
+                    text-align: center;
+                }
+                .main_nav_bar ul li{
+                    border-bottom: 1px dotted gray;
+                }
+                 .mainMenuCenter{
+                        display: flex;
+                        flex-direction: column;
                  }
 
-                 .navbar-nav{
-                        display: none;
+                 /* RightSide */
+                 .navbar-nav ul {
+                     display: flex;
+                     flex-direction: column;
                  }
-                .hamburger-container{
-                      display:none;
-                    }
+
+                 .navbar-nav ul li {
+                     justify-content: center;
+                     align-items: center;
+                 }
+                 .hamburger-container {
+                     width: 4%;
+                     height: 100%;
+                 }
+                 .brand_logo {
+                    text-align: right;
+                }
+
+                 .hamburger-container, .bar1, .bar2, .bar3 {
+                      display: block;
+                      left:470px;
+                }
+/* 
+                 .bar1, .bar2, .bar3 {
+                     height: 40%;
+                     display: block;
+                     flex-direction: column;
+                     line-height: 10px;
+                 }
+
+              
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
                       left:550px;
-                }
+                } */
 
            }
 
@@ -123,18 +304,18 @@
             @media (max-width: 1180px){
 
                  .main_nav_bar{
-                        display: none;
+                        /* display: none; */
                  }
 
                  .navbar-nav{
-                        display: none;
+                        /* display: none; */
                  }
                 .hamburger-container{
-                      display:none;
+                      /* display:none; */
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:500px;
+                      left:470px;
                 }
 
            }
@@ -156,7 +337,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:470px;
+                      left:440px;
                 }
 
            }
@@ -177,7 +358,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:400px;
+                      left:370px;
                 }
 
            }
@@ -199,7 +380,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:350px;
+                      left:320px;
                 }
 
            }
@@ -219,7 +400,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:330px;
+                      left:300px;
                 }
 
            }
@@ -240,7 +421,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:260px;
+                      left:230px;
                 }
 
            }
@@ -261,7 +442,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:240px;
+                      left:210px;
                 }
 
            }
@@ -280,7 +461,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:220px;
+                      left:190px;
                 }
 
            }
@@ -299,7 +480,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:170px;
+                      left:150px;
                 }
 
            }
@@ -319,7 +500,7 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:150px;
+                      left:120px;
                 }
 
            }
@@ -338,14 +519,10 @@
                     }
                 .hamburger-container, .bar1, .bar2, .bar3 {
                       display: block;
-                      left:130px;
+                      left:100px;
                 }
 
            }
-
-
-
-
 
 
 
@@ -372,8 +549,8 @@ margin-top: 20px;
 
 
 
---------------- About page --------------
---------------- About page --------------
+/* --------------- About page --------------
+--------------- About page -------------- */
 
 .about-section{
 background-color: white;
@@ -397,6 +574,7 @@ padding-bottom: 0px;
     margin-bottom:1em;
 }
 
+
 .logo-des-article{
     margin-bottom:2.5em;
     text-align: justify;
@@ -407,12 +585,12 @@ font-size: 15px;
 text-align: justify;
 }
 
---------------- End of about page --------------
---------------- End of about page --------------
+/* --------------- End of about page --------------
+--------------- End of about page -------------- */
 
 
---------------- blog page --------------
---------------- blog page --------------
+/* --------------- blog page --------------
+--------------- blog page -------------- */
 
 
 .article-content p{
@@ -441,13 +619,11 @@ text-align: justify;
 }
 
 
---------------- end of blog page --------------
+/* --------------- end of blog page --------------
 
 
---------------- Home page --------------
-.othercards{
-    background-color: red;
-}
+--------------- Home page -------------- */
+
 
 .homepage {
     background-color: white;
@@ -455,13 +631,14 @@ text-align: justify;
     padding: 20px;
 }
 
---------------- End of Home page --------------
+/* --------------- End of Home page --------------
 
 
---------------- Service page -------------------
-.service-gis{
-    background-color: red;
-}
+--------------- Service page ------------------- */
+
+
+
+
 
     </style>
 
@@ -506,18 +683,29 @@ text-align: justify;
         <div class="navbar-container">
 
                  <!-- Image Logo -->
-                 <div class="brand_logo" >
+                 <div class="brand_logo" style="text-align: right;" >
                     <a class="logo-image" href="{% url 'geodrapp-home' %}"><img src="/static/geodrapp/geodrhub_logo.png" alt="Company logo is not available"></a>
                  </div>
 
-                <!--  Humberg-->
-                <div class="hamburger-container"  onclick="myFunction(this)">
-                  <div class="bar1"></div>
-                  <div class="bar2"></div>
-                  <div class="bar3"></div>
-                </div>
+    <!------------Start-----Center Menu----main and Right Menu----------------- -->
+      
 
-                 <!--Main nav bar-->
+        <!-- -------close Menu button -->
+
+        <!-- <div class="close"><i class="fa fa-times">XXX</i></div> -->
+   
+        
+        <!--  Humberg-->
+        <div class="hamburger-container" id="open" onclick="myFunction(this)">
+            <div class="bar1"></div>      
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>  
+
+        
+        <div class="mainMenuCenter" id="mainMenuCenter">
+
+                 <!------------Start-------Main nav bar----------->
                  <div class="main_nav_bar">
                      <ul class="main_nav_items">
                          <li>
@@ -525,13 +713,81 @@ text-align: justify;
                          </li>
                          <li>
                              <a href="{% url 'geodrapp-about' %}">ABOUT</a>
+                        <!---------------About subMenu-section---------------------->
+                                <ul>
+                                    <li class="#"><a href="#">Profiles</a></li>
+                                    <li class="#"><a href="#">Profiles</a></li>
+                                    <li class="#"><a href="#">Profiles</a></li>
+                                    <li class="#"  id="Menuservice4"><a href="#">Profiles</a></li>
+                                </ul>
+                         <!---------------About subMenu-section---------------------->
                          </li>
+
                          <li>
                              <a href="{% url 'geodrapp-blog' %}">BLOG</a>
                          </li>
                          <li>
                              <a href="{% url 'geodrapp-service' %}">SERVICES</a>
+
+                              <!--------Start-------Services subMenu-section---------------------->
+                               <ul>
+                                    <li class="Menuservice1"><a href="#">Profiles 1  &nbsp ></a>
+                                                
+                                        <!--------Start-------Services subMenu-section---------------------->
+                                        <ul class="subsubMenu" id="Menuservice1">
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"  id="Menuservice4"><a href="#">Profiles</a></li>
+                                        </ul>
+                                        <!--------End-------Services subMenu-section---------------------->
+                                        
+                                    </li>
+                                    <li class="#"><a href="#">Profiles2  &nbsp ></a>                                        
+                                                
+                                        <!--------Start-------Services subMenu-section---------------------->
+                                        <ul class="subsubMenu">
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"  id="Menuservice4"><a href="#">Profiles</a></li>
+                                        </ul>
+                                        <!--------End-------Services subMenu-section---------------------->
+                                    
+                                    </li>
+                                    <li class="#"><a href="#">Profiles3  &nbsp ></a>
+                                        
+                                                
+                                        <!--------Start-------Services subMenu-section---------------------->
+                                        <ul class="subsubMenu">
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"  id="Menuservice4"><a href="#">Profiles</a></li>
+                                        </ul>
+                                        <!--------End-------Services subMenu-section---------------------->
+                                    
+                                    
+                                    </li>
+                                    <li class="#"  id="Menuservice4"><a href="#">Profiles4  &nbsp > </a>
+                                        
+                                                
+                                        <!--------Start-------Services subMenu-section---------------------->
+                                        <ul class="subsubMenu">
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"><a href="#">Profiles</a></li>
+                                            <li class="#"  id="Menuservice4"><a href="#">Profiles </a></li>
+                                        </ul>
+                                        <!--------End-------Services subMenu-section---------------------->
+                                    
+                                    </li>
+                                </ul>
+                    <!--------End-------Services subMenu-section---------------------->
+
                          </li>
+
+
                          <li>
                              <a href="{% url 'geodrapp-project' %}">PROJECTS</a>
                          </li>
@@ -546,7 +802,9 @@ text-align: justify;
                          </li>
                      </ul>
 
-                 </div>
+                </div>
+
+                  <!------------Start-------Main nav bar----------->
 
 
                 <!-- Navbar Right Side -->
@@ -582,8 +840,12 @@ text-align: justify;
 
                     </ul>
                 </div>
-        </div>
+         </div>
  <!--End of navbar-container-->
+
+      </div>
+ <!------------Start-----Center Menu----main and Right Menu----------------- -->
+
     </nav>
 <!-- end of navbar -->
 </header>
@@ -729,7 +991,32 @@ text-align: justify;
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+
     <script>
+
+        // Toogle
+
+const menuCenter = document.querySelector('#mainMenuCenter');
+const opebBars = document.querySelector('#open')
+const closebars = document.querySelector('.close');
+
+// function humbergh() {
+//     console.log('clicked')
+//     opebBars.style.display = block;
+//}
+
+opebBars.addEventListener('click', ()=>{
+    e.preventDefault()
+    menuCenter.style.display = block;
+
+    // console.log('clicked')
+})
+
+
+
+
     function myFunction(x) {
       x.classList.toggle("change");
     }
@@ -759,9 +1046,9 @@ entries.forEach(entry => {
  }
 });
 }
-sectionOneOptions);
+// sectionOneOptions);
 
-sectionOneObserver.observe(sectionOne);
+// sectionOneObserver.observe(sectionOne);
 
 
 
