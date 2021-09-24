@@ -7,29 +7,18 @@
 		<hr>
         <br>
         <article class="media content-section mt-2">
-            <div class="media-body">
+                <div class="media-body">
                 <lu class="list-group mr-5">
                     <li class="list-group-item list-group-item-light">
                         <div class="article-metadata">
 
 
-                                    <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
+                            <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
 
-                                    <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
-                                    <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
+                            <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
+                            <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
 
 
-                            <!--
-                            <div class="row">
-                                <div class="col col-md-1">
-                                    <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
-                                </div>
-                                <div class="col col-md-11 mt-2">
-                                    <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
-                                    <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
-                                </div>
-                            </div>
-                            -->
                         </div>
                     </li>
 

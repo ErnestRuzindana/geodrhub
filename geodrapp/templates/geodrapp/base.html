@@ -48,6 +48,7 @@ header{
     box-shadow: 0 0.5px 3px 0.5px;
     width: 100%;
     box-sizing: border-box;
+    max-height: 80px;
 }
 
 header div a img {
@@ -140,6 +141,14 @@ header nav ul a.active {
     z-index: 500;
 }
 
+.container {
+    background: #eeeeeee7;
+    padding: 20px;
+    
+}
+
+
+
 
 /* --End of navbar-- */
 
@@ -163,7 +172,7 @@ color: #2E3192;
 /* --- About page --- */
 
 .about-section{
-    background-color: white;
+    /* background-color: white; */
     text-align: justify;
 }
 
@@ -174,7 +183,7 @@ color: #2E3192;
 }
 
 .about-article{
-    background-color: white;
+    /* background-color: white; */
     margin-bottom:2.2em;
     padding: 25px;
 
@@ -194,6 +203,44 @@ color: #2E3192;
     font-size: 15px;
     text-align: justify;
 }
+
+.dropdown-about {
+    display: flex;
+    flex-direction: column;
+    background: #808B96;
+    border-radius: 4px; 
+    
+}
+
+.dropdown-about li {
+    display: none;
+}
+
+.dropdown-about li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    width: max-content;
+}
+
+nav ul li:hover ul li{
+    display: block;
+    width: 220px;
+
+}
+
+nav ul li ul li:hover{
+    background:#EEEEEE;
+    color: #2E3192;
+    max-width: 220px;
+}
+
+
+
+
+
+
+
 
 /* --------------- End of about page --------------
 --------------- End of about page -------------- */
@@ -231,6 +278,8 @@ color: #2E3192;
 .SidebarBlog{
     position: fixed;
 }
+
+
 
 
 /* --------------- end of blog page --------------
@@ -304,14 +353,72 @@ color: #2E3192;
     <nav>
         <ul>
             <li><a href="{% url 'geodrapp-home' %}">HOME</a></li>
-            <li><a href="{% url 'geodrapp-about' %}">ABOUT</a></li>
+            
+            <li>
+                <a href="{% url 'geodrapp-about' %}">ABOUT</a>
+
+                <ul class="dropdown-about">
+                    <li> <a href="#">Overview</a> </li>
+                    <li> <a href="#">Background and Origin</a> </li>
+                    <li> <a href="#">Motto</a> </li>
+                    <li> <a href="#">Logo</a> </li>
+                    <li> <a href="#">Vision</a> </li>
+                    <li> <a href="#">Mission</a> </li>
+                    <li> <a href="#">Values</a> </li>
+                    <li> <a href="#">Clients</a> </li>
+                    <li> <a href="#">Management Team</a> </li>
+                    <li> <a href="#">Partners</a> </li>
+                </ul>
+            </li>
+
             <li><a href="{% url 'geodrapp-blog' %}">BLOG</a></li>
-            <li><a href="{% url 'geodrapp-service' %}">SERVICES</a></li>
+            <li>
+                <a href="{% url 'geodrapp-service' %}">SERVICES</a>
+
+                <ul class="dropdown-about">
+                    <li> 
+                        <a href="#"> Training &nbsp<i class="fas fa-arrow-right"></i></a> 
+                    </li>
+
+                    <li> <a href="#">Research &nbsp<i class="fas fa-arrow-right"></i></a> </li>
+                    <li> <a href="#">Consultancy &nbsp<i class="fas fa-arrow-right"></i></a> </li>
+                </ul>
+            </li>
             <li><a href="{% url 'geodrapp-project' %}">PROJECTS</a></li>
             <li><a href="#">DATA</a></li>
             <li><a href="{% url 'geodrapp-storymap' %}">STORYMAP</a></li>
             <li><a href="#">CONTACT US</a></li>
-            <li><a href="#">PROFILE</a></li>
+
+            <li>
+                <a href="#"> <i class="fas fa-user"></i></a>
+
+                <ul class="dropdown-about">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'profile' %}"><img class="profile"  src="{{ user.profile.image.url }}" alt="">
+                            {{ user.username }}
+                        </a>
+                    </li>
+                    <li >
+                        <a  href="{% url 'geodrapp-post_form' %}"> Create Post </a>
+                    </li>
+                    <li >
+                        <a  href="{% url 'logout' %}"> Logout </a>
+                    </li>
+
+                    {% else %}
+
+                    <li>
+                        <a  href="{% url 'login' %}"> Login </a>
+                        </li>
+                    <li>
+                        <a  href="{% url 'register' %}"> Register </a>
+                    </li>
+
+                    {% endif %}
+
+                </ul>
+            </li>
         </ul>
     </nav>
     <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
