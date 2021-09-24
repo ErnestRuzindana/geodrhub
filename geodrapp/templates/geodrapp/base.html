@@ -45,7 +45,7 @@ header{
     left: 0;
     padding: 0 100px;
     background: #808B96;
-    background-position: fixed;
+    box-shadow: 0 0.5px 3px 0.5px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -303,7 +303,7 @@ color: #2E3192;
 
     <nav>
         <ul>
-            <li><a href="{% url 'geodrapp-home' %}" class="active">HOME</a></li>
+            <li><a href="{% url 'geodrapp-home' %}">HOME</a></li>
             <li><a href="{% url 'geodrapp-about' %}">ABOUT</a></li>
             <li><a href="{% url 'geodrapp-blog' %}">BLOG</a></li>
             <li><a href="{% url 'geodrapp-service' %}">SERVICES</a></li>
