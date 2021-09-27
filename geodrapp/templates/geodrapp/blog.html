@@ -10,7 +10,7 @@
 			{% for post in posts %}
 				<article class="media content-section mt-2">
 					<div class="media-body">
-						<lu class="list-group mr-5">
+						<lu class="list-group border border-secondary mr-5">
 							<li class="list-group-item list-group-item-light">
 								<div class="article-metadata">
 									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
@@ -77,9 +77,10 @@
 	<div class="SidebarBlog col-md-1"> </div>
 		<!-- Sidebar -->
 		<div class=" col-md-3 mt-3">
-			<div class="border bg-light" style="padding: 10px;">
-				This is the Sidebar on Blog page
-				<br><br><br><br>
+			<div class="border" style="padding: 10px;">
+				<p>This is the Sidebar on Blog page</p>
+                <p>This is the Sidebar on Blog page</p>
+                <p>This is the Sidebar on Blog page</p>
 			</div>
 		</div>
 	</div>

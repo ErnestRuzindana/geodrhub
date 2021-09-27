@@ -225,14 +225,14 @@ color: #2E3192;
 
 nav ul li:hover ul li{
     display: block;
-    width: 220px;
+    width: 180px;
 
 }
 
 nav ul li ul li:hover{
     background:#EEEEEE;
     color: #2E3192;
-    max-width: 220px;
+    max-width: 180px;
 }
 
 
@@ -261,6 +261,13 @@ nav ul li ul li:hover{
     font-weight: bold;
 }
 
+.list-group-item{
+    background: 0;
+}
+.siderbar{
+    position: sticky;
+    
+}
 .article-detail h5{
     font-size: 20px;
     font-weight: bold;
@@ -358,10 +365,7 @@ nav ul li ul li:hover{
                 <a href="{% url 'geodrapp-about' %}">ABOUT</a>
 
                 <ul class="dropdown-about">
-                    <li> <a href="#">Overview</a> </li>
-                    <li> <a href="#">Background and Origin</a> </li>
-                    <li> <a href="#">Motto</a> </li>
-                    <li> <a href="#">Logo</a> </li>
+                    <li> <a href="#">Background</a> </li>
                     <li> <a href="#">Vision</a> </li>
                     <li> <a href="#">Mission</a> </li>
                     <li> <a href="#">Values</a> </li>
@@ -377,17 +381,16 @@ nav ul li ul li:hover{
 
                 <ul class="dropdown-about">
                     <li> 
-                        <a href="#"> Training &nbsp<i class="fas fa-arrow-right"></i></a> 
+                        <a href="#"> Training</a> 
                     </li>
 
-                    <li> <a href="#">Research &nbsp<i class="fas fa-arrow-right"></i></a> </li>
-                    <li> <a href="#">Consultancy &nbsp<i class="fas fa-arrow-right"></i></a> </li>
+                    <li> <a href="#">Research</a> </li>
+                    <li> <a href="#">Consultancy</a> </li>
                 </ul>
             </li>
             <li><a href="{% url 'geodrapp-project' %}">PROJECTS</a></li>
             <li><a href="#">DATA</a></li>
             <li><a href="{% url 'geodrapp-storymap' %}">STORYMAP</a></li>
-            <li><a href="#">CONTACT US</a></li>
 
             <li>
                 <a href="#"> <i class="fas fa-user"></i></a>
