@@ -4,11 +4,10 @@
 
 <div class="row content-section bg-light">
 
-	<!-- First column -->
-	<div class="col col-md-3"></div>
 
-	<!-- Second column -->
-	<div class="col col-md-6">
+
+
+	<div class="col col-md-10">
 		<div class="content-section" >
 			<form method="POST" class="ml-4 mr-4 mb-4 mt-4">
 				{% csrf_token %}
@@ -18,7 +17,7 @@
 				</fieldset>
 				<br>
 				<div class="form-group">
-					<button class="btn btn-outline-primary" type="submit"> login </button>
+					<button class="btn btn-outline-secondary" type="submit"> login </button>
 					<small>
 						<a href="{% url 'password_reset' %}"> Forgot Password? </a>
 					</small>
@@ -32,8 +31,7 @@
 		</div>
 	</div>
 
-	<!-- Third column -->
-	<div class="col col-md-3"></div>
+
 
 </div>
 

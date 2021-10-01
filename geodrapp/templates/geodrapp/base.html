@@ -45,7 +45,8 @@ header{
     left: 0;
     padding: 0 100px;
     background: #808B96;
-    box-shadow: 0 0.5px 3px 0.5px;
+    /* box-shadow: 0 0.5px 3px 0.5px; */
+    box-shadow: 0 0 25px -3px rgba(0,0,0,0.4);
     width: 100%;
     box-sizing: border-box;
     max-height: 80px;
@@ -188,7 +189,59 @@ header nav ul a.active {
     
 }
 
+/* Images sliding start */ 
 
+#imageSlider{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box {
+    width:100%;
+
+    height: 80vh;
+
+/* box-shadow: 0 0 25px -3px rgba(0,0,0,0.4); */
+
+}
+
+.box img{
+
+    width:100%;
+    height: 100%;
+}
+.fa-chevron-left{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    background: hsla(0, 0%, 98%, 0.589);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #979393;
+    text-align: center;
+    cursor: pointer;
+}
+.fa-chevron-right{
+    position: absolute;
+    top: 50%;
+    right: 10%;    
+    background: hsla(0, 0%, 98%, 0.589);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #979393;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Image slider end */
 
 
 /* --End of navbar-- */
@@ -337,8 +390,7 @@ nav ul li ul li:hover{
 
 .homepage {
     background-color: white;
-    height: 400px;
-    padding: 20px;
+    height: 100vh;
 }
 
 .SidebarHome{
@@ -473,9 +525,6 @@ nav ul li ul li:hover{
 
 
 
-
-    
-    <br><br><br><br>
 
     <div class="container">
 
@@ -637,6 +686,41 @@ nav ul li ul li:hover{
                 $('nav').toggleClass('active')
             })
         })
+
+
+        // Image Sliders
+
+                JavaScript :
+
+
+
+        var images = ['/static/geodrapp/image1.png','/static/geodrapp/image2.png','/static/geodrapp/image3.png','/static/geodrapp/image4.png','/static/geodrapp/image5.png'];
+
+        var i =0;
+
+        function slideShow() {
+
+            document.getElementById("image").src=images[i];
+
+
+
+            if(i<images.length-1){
+
+                i++;
+
+            }
+
+            else {
+
+                i=0;
+
+            }
+
+            setTimeout("slideShow()" , 2000);
+
+        }
+
+        window.onload = slideShow;
     </script>
 
 </body>
