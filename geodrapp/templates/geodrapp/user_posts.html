@@ -3,13 +3,13 @@
 
 	<div class="row">
 		<div class=" col-md-8 mt-3 mr-2">
-			<h6 class="mb-3"> Articles by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h6>
+			<h6 class="mb-3"> {{ view.kwargs.username }} has {{ page_obj.paginator.count }} articles on this platform!! Explore them <i class="fas fa-arrow-down"></i> </h6>
 			<hr>
 			<br>
 			{% for post in posts %}
 				<article class="media content-section mt-2">
 					<div class="media-body">
-						<lu class="list-group mr-5">
+						<lu class="list-group border border-secondary 	 mr-5">
 							<li class="list-group-item list-group-item-light">
 								<div class="article-metadata">
 									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
