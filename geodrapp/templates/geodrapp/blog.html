@@ -3,14 +3,14 @@
 
 
 	<div class="row">
-		<div class=" col-md-8 mt-3 mr-2">
+		<div class="col col-md-8 mr-1">
 			<h4> Our Stories </h4>
 			<hr>
 			<br>
 			{% for post in posts %}
 				<article class="media content-section mt-2">
 					<div class="media-body">
-						<lu class="list-group border border-secondary mr-5">
+						<lu class="list-group border border-secondary mr-5" style="box-shadow: 0 0 25px -3px rgba(0,0,0,0.4);">
 							<li class="list-group-item list-group-item-light">
 								<div class="article-metadata">
 									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
@@ -73,16 +73,27 @@
 
 
 
-		
-	<div class="SidebarBlog col-md-1"> </div>
+	<div class="col col-md-4">
 		<!-- Sidebar -->
-		<div class=" col-md-3 mt-3">
-			<div class="border" style="padding: 10px;">
-				<p>This is the Sidebar on Blog page</p>
-                <p>This is the Sidebar on Blog page</p>
-                <p>This is the Sidebar on Blog page</p>
-			</div>
-		</div>
+		<br><br><br>
+		<div class="" style="padding: 20px;">
+<!--		<img src="/static/geodrapp/background.jpg" style="width: 100%;">-->
+            <lu>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">GIS</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Remote Sensing</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Land Surveying</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Data Science</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Machine Learing</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Mapping</li></a>
+                <br><br>
+                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Development</li></a>
+            </lu>
+        </div>
 	</div>
 
 	
