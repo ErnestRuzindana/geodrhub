@@ -188,6 +188,34 @@ header nav ul a.active {
     
     }
 
+    .row div{
+        display: block;
+        width: auto;
+    }
+
+    .row {
+        display: block;
+        width: 100%;
+    }
+
+    footer div div div{
+        text-align: center;
+    }
+
+    div div div .card{
+        width: 100%;
+        
+        /* display: flex; */
+    }
+
+    div div .card-group{
+        /* display: flex; */
+        /* flex-direction: row; */
+    }
+
+    footer div div div div p{
+        text-align: center;
+    }
   
 }
 
@@ -205,13 +233,9 @@ header nav ul a.active {
         width: 100%;
         text-align: left;
     }
+
 }
 
-
-/* .Logo-about{
-        background: #2E3192;
-        width: 100%;
-    } */
 
 
 .row, .SidebarBlog {
@@ -222,6 +246,20 @@ header nav ul a.active {
     background: #eeeeeee7;
     padding: 20px;
     
+}
+
+.privacy{
+    justify-content: space-around;
+    color: white;
+    display: flex;
+}
+
+.privacy:hover{
+    color: #2E3192;
+}
+
+footer div div a{
+    color: white;
 }
 
 /* Images sliding start */ 
@@ -649,7 +687,7 @@ nav ul li ul li:hover{
             <div class="col-md-3 my-col text-dark">
                 <div class="col-md-12 my-col text-dark mb-2 mt-2" style="width:100%; padding: 15px;"> <h5>CONTACT US</h5>
                   <div class="col-md-12 mt-2" style="width:100%">
-                    <p class="text-white"><i class="fas fa-envelope-open-text"></i> &nbsp<a class="" href="#">info@geodrhub.com</a></p>
+                    <p class="text-white"><a class="" href="#"><i class="fas fa-envelope-open-text"></i> &nbsp info@geodrhub.com</a></p>
                     <p class="text-white"><i class="fas fa-phone-alt"></i> &nbsp(+250) 788 957 304</p>
                     <p class="text-white"><i class="fab fa-whatsapp"></i> &nbsp(+250) 788 957 304</p>
                     <p class="text-white"><i class="fas fa-street-view"></i> &nbspKN 73 Street, Kiyovu</p>
@@ -670,10 +708,10 @@ nav ul li ul li:hover{
                 <img src="/static/geodrapp/geodrhub_logo.png" height="70">
             </div>
 
-            <div class="col col-md-3 mt-4" style="text-align: center;">
-                <a href="#"><small class="text-white"><i class="fab fa-pinterest"></i>  Terms </small></a>
-                <a href="#"><small class="text-white"> |&nbsp <i class="fas fa-user-secret"></i>  Privacy </small></a>
-                <a href="#"><small class="text-white"> |&nbsp <i class="fas fa-copyright"></i>  Copyright </small></a>
+            <div class="privacy col col-md-3 mt-4" style="text-align: center;">
+                <a href="#"><small><i class="fab fa-pinterest"></i>  Terms </small></a>
+                <a href="#"><small> |&nbsp <i class="fas fa-user-secret"></i>  Privacy </small></a>
+                <a href="#"><small> |&nbsp <i class="fas fa-copyright"></i>  Copyright </small></a>
             </div>
         </div>
         <hr>
@@ -699,7 +737,7 @@ nav ul li ul li:hover{
                 <small class="text-center" style="color:#ffffff;"> Copyright ©2021 GeoDR Hub : All rights reserved </small>
             </div>
             <div class="col-md-3 mt-2 mr-2" style="text-align: center;">
-                <small style="color:#ffffff"> <i class="fas fa-layer-group"></i>  &nbsp  GeoDR Hub Developers Team </small>
+               <small style="color:#ffffff">  <a href="#"> <i class="fas fa-layer-group"></i>  &nbsp  GeoDR Hub Developers Team </a></small>
             </div>
         </div>
         <br>
