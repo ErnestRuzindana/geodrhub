@@ -48,6 +48,8 @@
 				</article>
 			{% endfor %}
 
+
+            <div class="" style="text-align: center;">
 			{% if is_paginated %}
 
 				{% if page_obj.has_previous %}
@@ -57,9 +59,9 @@
 
 				{% for num in page_obj.paginator.page_range %}
 					{% if page_obj.number == num %}
-						<a class="btn btn-secondary mb-4 mt-4" href="?page={{ num }}"> {{ num }} </a>
+						<a class="btn btn-secondary mb-4 mt-4" style="text-align: center; href="?page={{ num }}"> {{ num }} </a>
 					{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-						<a class="btn btn-outline-secondary mb-4 mt-4" href="?page={{ num }}"> {{ num }} </a>
+						<a class="btn btn-outline-secondary mb-4 mt-4"  href="?page={{ num }}"> {{ num }} </a>
 					{% endif %}
 				{% endfor %}
 
@@ -69,6 +71,7 @@
 				{% endif %}
 
 			{% endif %}
+            </div>
 		</div>
 
 
