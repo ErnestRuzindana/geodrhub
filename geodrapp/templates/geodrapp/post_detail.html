@@ -109,18 +109,23 @@
 
                         <!-- This is the Author of the Article -->
                         <br><br>
-                        <div class="row article-metadata border-top">
-                            <div class="col col-md-3">
-                                <img class="article-img mt-2" style="width: 100%;" src="{{ post.author.profile.image.url }}" alt="">
-                            </div>
+                        <div class="boxbox">
 
-                            <div class="col col-md-9" style="padding-top: 20px; text-align: left;">
-                                <strong> {{ post.author.first_name }} {{ post.author.last_name }}</strong>
-                                <small> is the author of this helpful and awesome article published on {{ post.date_posted | date:"F d, Y"}}, with a full copyright issued by Geospatial Development and Research Hub. </small>
+                            <div class="one">
+                                <img class="mt-2" src="{{ post.author.profile.image.url }}" alt="">
+                            </div>
+                            <div class="two">
+                                <p>
+                                    <strong> {{ post.author.first_name }} {{ post.author.last_name }}</strong>
+                                    <small> is the author of this helpful and awesome article published on {{ post.date_posted | date:"F d, Y"}}, with a full copyright issued by Geospatial Development and Research Hub. </small>
+                                </p>
                                 <hr>
                                 <small> Explore more articles by <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> {{ object.author.first_name }} {{ object.author.last_name }} </a> </small>
                             </div>
+
                         </div>
+
+
 
 
 

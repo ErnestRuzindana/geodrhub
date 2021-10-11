@@ -107,6 +107,29 @@ header nav ul a.active {
     display: none;
 }
 
+.boxbox{
+    display: flex;
+}
+
+.boxbox div{
+    margin: 0 20px;
+    padding: 20px;
+}
+
+.boxbox div img{
+    width: 100%;
+}
+
+
+/* @media (min-width: 1200px){
+
+    .boxbox div img{
+        display: flex;
+        width: 300px 300px;
+    }
+
+} */
+
 @media (max-width: 1195px){
     header{
         display: block;
@@ -131,6 +154,12 @@ header nav ul a.active {
         height: 100vh;
     }
 
+
+    .boxbox div img{
+        width: 20%;
+    }
+
+    
 }
 
 @media (max-width: 1000px){
@@ -195,8 +224,8 @@ header nav ul a.active {
 
     .row {
         display: block;
-        width: 100%;
     }
+
 
     footer div div div{
         text-align: center;
@@ -222,6 +251,16 @@ header nav ul a.active {
         padding-left: 10px;
         padding-right: 0px;
     }
+
+    .article-author img{
+        background: red;
+        width: 100%;
+    }
+
+    .boxbox div img{
+        width: 40%;
+    }
+
   
 }
 
@@ -238,6 +277,11 @@ header nav ul a.active {
         flex: auto;
         width: 100%;
         text-align: left;
+    }
+
+    .boxbox div img{
+        display: flex;
+        width: 100%
     }
 
 }
@@ -266,6 +310,12 @@ header nav ul a.active {
 
 footer div div a{
     color: white;
+}
+
+.article-img{
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
 }
 
 /* Images sliding start */ 
@@ -316,6 +366,8 @@ footer div div a{
     text-align: center;
     cursor: pointer;
 }
+
+
 
 /* Image slider end */
 
@@ -527,10 +579,10 @@ nav ul li ul li:hover{
 
     <nav>
         <ul>
-            <li><a href="{% url 'geodrapp-home' %}">HOME</a></li>
+            <li ><a style="background: #808B96;" href="{% url 'geodrapp-home' %}">HOME</a></li>
             
-            <li>
-                <a href="{% url 'geodrapp-about' %}">ABOUT <i class="fas fa-caret-down"></i></a>
+            <li >
+                <a style="background: #808B96;" href="{% url 'geodrapp-about' %}">ABOUT <i class="fas fa-caret-down"></i></a>
 
                 <ul class="dropdown-about">
                     <li> <a href="#">Background</a> </li>
@@ -543,9 +595,9 @@ nav ul li ul li:hover{
                 </ul>
             </li>
 
-            <li><a href="{% url 'geodrapp-blog' %}">BLOG</a></li>
-            <li>
-                <a href="{% url 'geodrapp-service' %}">SERVICES <i class="fas fa-caret-down"></i></a>
+            <li ><a style="background: #808B96;" href="{% url 'geodrapp-blog' %}">BLOG</a></li>
+            <li >
+                <a style="background: #808B96;" href="{% url 'geodrapp-service' %}">SERVICES <i class="fas fa-caret-down"></i></a>
 
                 <ul class="dropdown-about">
                     <li> 
@@ -556,15 +608,15 @@ nav ul li ul li:hover{
                     <li> <a href="#">Consultancy</a> </li>
                 </ul>
             </li>
-            <li><a href="{% url 'geodrapp-project' %}">PROJECTS</a></li>
-            <li><a href="#">DATA</a></li>
-            <li><a href="{% url 'geodrapp-storymap' %}">STORYMAP</a></li>
+            <li ><a style="background: #808B96;" href="{% url 'geodrapp-project' %}">PROJECTS</a></li>
+            <li ><a style="background: #808B96;" href="#">DATA</a></li>
+            <li ><a style="background: #808B96;" href="{% url 'geodrapp-storymap' %}">STORYMAP</a></li>
             
-            <li>
+            <li >
                 {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}"><img class="profile"  src="{{ user.profile.image.url }}" alt=""></a>
+                <a style="background: #808B96;" href="{% url 'profile' %}"><img class="profile"  src="{{ user.profile.image.url }}" alt=""></a>
                 {% else %}
-                <a href="#"> <i class="fas fa-user"></i></a>
+                <a style="background: #808B96;" shref="#"> <i class="fas fa-user"></i></a>
                 {% endif %}
 
                 <ul class="dropdown-about">
