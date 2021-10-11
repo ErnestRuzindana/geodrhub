@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="row">
-    <div class="col col-md-9 mr-1">
-		<h3 style="color: #154360; font-weight: bold;">The blog article titled <strong>"{{ object.title }}"</strong> published by {{ object.author.username }} on Geospatial Development and Research Hub platform</h3>
+    <div class="col col-md-9">
+		<h4 style="color: #154360; font-weight: bold;">The blog article titled <strong>"{{ object.title }}"</strong> published by {{ object.author.username }} on Geospatial Development and Research Hub platform</h4>
 
         <br>
         <article class="media content-section mt-2">
@@ -22,7 +22,7 @@
                         </div>
                     </li>
 
-                    <li class="article-detail list-group-item list-group-item-light" style="text-align: justify; padding: 30px;">
+                    <li class="article-detail list-group-item list-group-item-light" style="text-align: justify;">
 
                         <h5 class="article-title text-dark" style="width: 100%"> {{ object.title }}  </h5>
                         <hr>

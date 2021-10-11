@@ -9,7 +9,7 @@
 			{% for post in posts %}
 				<article class="media content-section mt-2">
 					<div class="media-body">
-						<lu class="list-group border border-secondary 	 mr-5">
+						<lu class="list-group border border-secondary">
 							<li class="list-group-item list-group-item-light">
 								<div class="article-metadata">
 									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
