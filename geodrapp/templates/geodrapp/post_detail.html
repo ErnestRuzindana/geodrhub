@@ -11,14 +11,16 @@
                 <lu class="list-group border border-secondary" style="box-shadow: 0 0 25px -3px rgba(0,0,0,0.4);">
                     <li class="list-group-item">
                         <div class="article-metadata">
+                            <div class=" article-metadata">
+                                <div class="divprofile1">
+                                    <a href="{% url 'geodrapp-user_posts' post.author.username %}"> <img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
+                                </div>
 
-
-                            <a href="{% url 'geodrapp-user_posts' object.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ object.author.profile.image.url }}" alt=""></a>
-
-                            <a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' object.author.username %}"> &nbsp {{ object.author.first_name }} {{ object.author.last_name }} </a>
-                            <small class="text-muted"> &nbsp &nbsp | {{ object.date_posted | date:"F d, Y"}} </small>
-
-
+                                <div class="divprofile2">
+                                    <a href="{% url 'geodrapp-user_posts' post.author.username %}"> &nbsp {{ post.author.first_name }} {{ post.author.last_name }}</a>
+                                    <small class="text-muted"> &nbsp &nbsp | {{ post.date_posted | date:"F d, Y"}} </small>
+                                </div>
+                            </div>
                         </div>
                     </li>
 

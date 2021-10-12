@@ -12,10 +12,15 @@
 					<div class="media-body">
 						<lu class="list-group border border-secondary mr-5" style="box-shadow: 0 0 25px -3px rgba(0,0,0,0.4);">
 							<li class="list-group-item list-group-item-light">
-								<div class="article-metadata">
-									<a href="{% url 'geodrapp-user_posts' post.author.username %}"><img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
-									<a class="mr-2 ml-2" href="{% url 'geodrapp-user_posts' post.author.username %}"> &nbsp {{ post.author.first_name }} {{ post.author.last_name }}</a>
-									<small class="text-muted"> &nbsp &nbsp | {{ post.date_posted | date:"F d, Y"}} </small>
+								<div class=" article-metadata">
+									<div class="divprofile1">
+										<a href="{% url 'geodrapp-user_posts' post.author.username %}"> <img class="rounded-circle article-img" width="50" height="50" src="{{ post.author.profile.image.url }}" alt=""></a>
+									</div>
+
+									<div class="divprofile2">
+										<a href="{% url 'geodrapp-user_posts' post.author.username %}"> &nbsp {{ post.author.first_name }} {{ post.author.last_name }}</a>
+										<small class="text-muted"> &nbsp &nbsp | {{ post.date_posted | date:"F d, Y"}} </small>
+									</div>
 								</div>
 							</li>
 							<li class="list-group-item list-group-item-light">
@@ -76,27 +81,30 @@
 
 
 
-	<div class="col col-md-4">
-		<!-- Sidebar -->
-		<br><br><br>
-		<div class="" style="padding: 20px;">
-<!--		<img src="/static/geodrapp/background.jpg" style="width: 100%;">-->
-            <lu>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">GIS</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Remote Sensing</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Land Surveying</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Data Science</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Machine Learing</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Mapping</li></a>
-                <br><br>
-                <a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Development</li></a>
-            </lu>
-        </div>
+
+		<div class="col col-md-4">
+			<!-- Sidebar -->
+			<br><br><br>
+			<div class="" style="padding: 20px;">
+	<!--		<img src="/static/geodrapp/background.jpg" style="width: 100%;">-->
+				<lu>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">GIS</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Remote Sensing</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Land Surveying</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Data Science</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Machine Learing</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Mapping</li></a>
+					<br><br>
+					<a href="#"><li class="btn btn-outline-secondary" style="width: 100%;">Web Development</li></a>
+				</lu>
+			</div>
+		</div>
+
 	</div>
 
 	
