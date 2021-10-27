@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     image_1 = models.ImageField(null=True, blank=True, upload_to="images/")
     image_2 = models.ImageField(null=True, blank=True, upload_to="images/")
     image_3 = models.ImageField(null=True, blank=True, upload_to="images/")
