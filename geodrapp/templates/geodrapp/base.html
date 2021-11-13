@@ -36,6 +36,7 @@ body {
     background: url(/static/geodrapp/background.jpg);
     width: 100%;
     background-attachment: fixed;
+    margin: 0px;
 }
 
 
@@ -228,7 +229,7 @@ header nav ul a.active {
         display: flex;
         flex-direction: column;
         background: #6e6969;
-        width: 140%;
+        width: 200px;
         right: -200%;
     
     }
@@ -462,35 +463,37 @@ color: #2E3192;
 }
 
 .dropdown-about {
+    width: 200px;
     display: flex;
+    text-align: left;
     flex-direction: column;
     background: #808B96;
-    width: 140px;
+    
     
 }
 
 .dropdown-about li {
     display: none;
-    width: 140px;
+    width: 200px;
 }
 
 .dropdown-about li a {
     height: 50px;
     line-height: 50px;
     padding: 0 20px;
-    width: 140px;
+    width: 200px;
 }
 
 
 nav ul li:hover ul li{
     display: block;
-    width: 140px;
+    width: 200px;
 }
 
 nav ul li ul li:hover{
     background:#EEEEEE;
     color: #2E3192;
-    width: 140px;
+    width: 200px;
 }
 
 
@@ -626,32 +629,34 @@ nav ul li ul li:hover{
                     <a class="navigation" href="{% url 'geodrapp-about' %}">ABOUT <i class="fas fa-caret-down"></i></a>
 
                     <ul class="dropdown-about">
-                        <li> <a href="#">Background</a> </li>
-                        <li> <a href="#">Vision</a> </li>
-                        <li> <a href="#">Mission</a> </li>
-                        <li> <a href="#">Values</a> </li>
-                        <li> <a href="#">Clients</a> </li>
-                        <li> <a href="#">Management</a> </li>
-                        <li> <a href="#">Partners</a> </li>
+                        <li> <a href="{% url 'geodrapp-overview' %}">Background</a> </li>
+<!--                        <li> <a href="#">Vision</a> </li>-->
+<!--                        <li> <a href="#">Mission</a> </li>-->
+<!--                        <li> <a href="#">Values</a> </li>-->
+                        <li> <a href="{% url 'geodrapp-structure' %}">Hub Structure</a> </li>
+                        <li> <a href="{% url 'geodrapp-management' %}">Management Team</a> </li>
+                        <li> <a href="{% url 'geodrapp-board' %}">Board</a> </li>
+                        <li> <a href="{% url 'geodrapp-clients' %}">Clients</a> </li>
+                        <li> <a href="{% url 'geodrapp-partners' %}">Partners</a> </li>
                     </ul>
                 </li>
 
-                <li ><a class="navigation" href="{% url 'geodrapp-blog' %}">BLOG</a></li>
+                <a class="navigation" href="{% url 'geodrapp-blog' %}"><li >BLOG</li></a>
                 <li >
                     <a class="navigation" href="{% url 'geodrapp-service' %}">SERVICES <i class="fas fa-caret-down"></i></a>
 
                     <ul class="dropdown-about">
-                        <li> 
-                            <a href="#"> Training</a> 
+                        <li>
+                            <a href="{% url 'geodrapp-training' %}"> Training</a>
                         </li>
 
-                        <li> <a href="#">Research</a> </li>
-                        <li> <a href="#">Consultancy</a> </li>
+                        <li> <a href="{% url 'geodrapp-research' %}">Research</a> </li>
+                        <li> <a href="{% url 'geodrapp-consultancy' %}">Consultancy</a> </li>
                     </ul>
                 </li>
-                <li ><a class="navigation" href="{% url 'geodrapp-project' %}">PROJECTS</a></li>
-                <li ><a class="navigation" href="#">DATA</a></li>
-                <li ><a class="navigation" href="{% url 'geodrapp-storymap' %}">STORYMAP</a></li>
+                <a class="navigation" href="{% url 'geodrapp-project' %}"><li>PROJECTS</li></a>
+                <a class="navigation" href="{% url 'geodrapp-data' %}"><li >DATA</li></a>
+                <a class="navigation" href="{% url 'geodrapp-storymap' %}"><li>STORYMAP</li></a>
                 
                 <li >
                     {% if user.is_authenticated %}

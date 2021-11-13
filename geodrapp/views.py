@@ -153,3 +153,33 @@ def calendar(request):
 
 def gis(request):
     return render(request, 'geodrapp/gis.html', {'title': 'Training of GIS'})
+
+def overview(request):
+    return render(request, 'geodrapp/overview.html', {'title': 'Overview'})
+
+def data(request):
+    return render(request, 'geodrapp/data.html', {'title': 'data'})
+
+def structure(request):
+    return render(request, 'geodrapp/structure.html', {'title': 'structure'})
+
+def management(request):
+    return render(request, 'geodrapp/management.html', {'title': 'management'})
+
+def board(request):
+    return render(request, 'geodrapp/board.html', {'title': 'board'})
+
+def clients(request):
+    return render(request, 'geodrapp/clients.html', {'title': 'clients'})
+
+def partners(request):
+    return render(request, 'geodrapp/partners.html', {'title': 'partners'})
+
+def training(request):
+    return render(request, 'geodrapp/training.html', {'title': 'training'})
+
+def research(request):
+    return render(request, 'geodrapp/research.html', {'title': 'research'})
+
+def consultancy(request):
+    return render(request, 'geodrapp/consultancy.html', {'title': 'consultancy'})

@@ -22,6 +22,16 @@ urlpatterns = [
     path('announcement/', views.announcement, name='geodrapp-announcement'),
     path('calendar/', views.calendar, name='geodrapp-calendar'),
     path('gis/', views.gis, name='geodrapp-gis'),
+    path('overview/', views.overview, name='geodrapp-overview'),
+    path('data/', views.data, name='geodrapp-data'),
+    path('structure/', views.structure, name='geodrapp-structure'),
+    path('management/', views.management, name='geodrapp-management'),
+    path('board/', views.board, name='geodrapp-board'),
+    path('clients/', views.clients, name='geodrapp-clients'),
+    path('partners/', views.partners, name='geodrapp-partners'),
+    path('training/', views.training, name='geodrapp-training'),
+    path('research/', views.research, name='geodrapp-research'),
+    path('consultancy/', views.consultancy, name='geodrapp-consultancy'),
 ]
 
 
