@@ -3,8 +3,6 @@
 
 <div class="row">
     <div class="col col-md-9">
-		<h4 style="color: #154360; font-weight: bold; text-align: center;">The blog article titled <strong>"{{ object.title }}"</strong> published by {{ object.author.username }} on Geospatial Development and Research Hub platform</h4>
-
         <br>
         <article class="media content-section mt-2">
             <div class="media-body">
@@ -179,7 +177,7 @@
                 <br>
 
                 <hr>
-                <div class="col col-md-3">
+                <div class="EditDeleteButton col col-md-3">
                     {% if object.author == user %}
                     <a class="btn btn-secondary btn-sm ml-4 mt-1 mb-1" href="{% url 'geodrapp-post_update' object.id %}"> Edit Post </a>
                     <a class="btn btn-danger btn-sm ml-4 mt-1 mb-1" href="{% url 'geodrapp-post_delete' object.id %}"> Delete </a>
@@ -189,7 +187,7 @@
             <br>
         </article>
         <br>
-        <div>
+        <div class="BackToTheStory">
             <a href="{% url 'geodrapp-blog' %}"> &#8592 Latest stories </a>
         </div>
 
